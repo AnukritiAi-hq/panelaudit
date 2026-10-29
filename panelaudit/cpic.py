@@ -23,6 +23,8 @@ import urllib.request
 from typing import Any
 
 API = "https://api.cpicpgx.org/v1"
+_UA = "panelaudit (+https://github.com/AnukritiAi-hq/panelaudit)"
+
 CACHE = pathlib.Path(__file__).resolve().parent / "cache"
 
 #: Attribution CPIC asks for. Carried into every report.
@@ -43,7 +45,17 @@ def _cache_path(endpoint: str, gene: str) -> pathlib.Path:
 
 def _fetch(endpoint: str, gene: str) -> list[dict[str, Any]]:
     url = f"{API}/{endpoint}?genesymbol=eq.{gene}"
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "application/json",
+            # CPIC began answering Python's default urllib User-Agent with
+            # HTTP 403 on 2026-10-29 while still serving curl normally.
+            # Without this, --refresh fails and the pinned cache is the
+            # only thing that still works.
+            "User-Agent": _UA,
+        },
+    )
     with urllib.request.urlopen(req, timeout=60) as fh:  # noqa: S310 — pinned host
         return json.load(fh)
 
