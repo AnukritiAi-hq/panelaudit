@@ -1,0 +1,31 @@
+{
+  "title": "panelaudit: panel-first pharmacogenomic audit",
+  "description": "<p>Panel-first rather than sample-first. Enumerates every diplotype expressible from CPIC allele definitions for a gene, projects each onto a candidate genotyping panel, and classifies the result as CORRECT, NO_CALL or WRONG against the phenotype CPIC assigns. Diplotype probabilities follow from Hardy-Weinberg equilibrium over CPIC's published per-population allele frequencies, and candidate loci are ranked by the carrier burden each one recovers.</p><p>It needs no cohort and no sequencing run: an uninterrogated position is operationally indistinguishable from the reference sequence, so a panel's behaviour on every genotype can be computed before any patient is sequenced.</p><p>Seven genes are audited (DPYD, TPMT, NUDT15, CYP2B6, CYP2C19, CYP2C9, CYP3A5) and seven are refused by name with reasons, because refusing beats producing a confidently wrong report.</p><p>Python 3.10+, standard library only. No patient data, no reference genome, no VCF. CPIC content bundled under CC0 1.0; code under Apache-2.0.</p>",
+  "upload_type": "software",
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "R B, Abhimanyu",
+      "affiliation": "Anukriti AI"
+    }
+  ],
+  "keywords": [
+    "pharmacogenomics",
+    "CPIC",
+    "genotyping panel",
+    "star alleles",
+    "phenotype misclassification",
+    "health equity",
+    "DPYD",
+    "CYP2C19"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AnukritiAi-hq/panelaudit",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Bundled CPIC curated content is dedicated to the public domain under CC0 1.0 and is not restricted by the software licence. CPIC (Clinical Pharmacogenetics Implementation Consortium), www.clinpgx.org. CPIC is a registered service mark of the U.S. Department of Health and Human Services; CPIC has not reviewed or endorsed this work."
+}
