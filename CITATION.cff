@@ -10,6 +10,14 @@ authors:
     email: abhi@anukritiai.com
     affiliation: Anukriti AI
 repository-code: "https://github.com/AnukritiAi-hq/panelaudit"
+doi: "10.5281/zenodo.23768368"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23768368"
+    description: Concept DOI, always resolves to the latest version.
+  - type: doi
+    value: "10.5281/zenodo.23768369"
+    description: Version DOI for v1.0.0, the snapshot behind the preprint.
 abstract: >-
   Panel-first pharmacogenomic audit. Enumerates every diplotype expressible
   from CPIC allele definitions, projects each onto a candidate genotyping

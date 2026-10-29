@@ -1,5 +1,7 @@
 # panelaudit
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23768368.svg)](https://doi.org/10.5281/zenodo.23768368)
+
 **What does this panel report for someone who carries X?**
 
 A coverage report lists the positions an assay interrogates. That is not
@@ -139,8 +141,16 @@ If this software contributed to your work, cite the paper and the archived
 release:
 
 ```
+R B A. panelaudit: panel-first pharmacogenomic audit. Zenodo; 2026.
+doi:10.5281/zenodo.23768368
+```
+
+The DOI above is the **concept DOI** and always resolves to the latest
+version — use it unless you need to pin. The exact snapshot behind the
+accompanying preprint is v1.0.0, `doi:10.5281/zenodo.23768369`.
+
+```
 [PAPER CITATION — TO COMPLETE ON PREPRINT DEPOSIT]
-Anukriti AI. panelaudit. Zenodo. [DOI — TO COMPLETE ON FIRST RELEASE]
 ```
 
 And cite the upstream data as CPIC asks:
