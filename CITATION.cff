@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: panelaudit
+message: >-
+  If you use this software, please cite both the software and the
+  accompanying paper.
+type: software
+authors:
+  - given-names: Abhimanyu
+    family-names: R B
+    email: abhi@anukritiai.com
+    affiliation: Anukriti AI
+repository-code: "https://github.com/<org>/panelaudit"
+abstract: >-
+  Panel-first pharmacogenomic audit. Enumerates every diplotype expressible
+  from CPIC allele definitions, projects each onto a candidate genotyping
+  panel, and classifies the result as CORRECT, NO_CALL or WRONG against the
+  phenotype CPIC assigns. Weights by published per-population allele
+  frequency under Hardy-Weinberg, and ranks which locus to add next by the
+  carrier burden it recovers. Needs no cohort and no sequencing run.
+keywords:
+  - pharmacogenomics
+  - CPIC
+  - genotyping panel
+  - health equity
+license: Apache-2.0
+version: 1.0.0
+date-released: "2026-10-29"

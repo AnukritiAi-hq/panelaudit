@@ -1,0 +1,203 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.CYP3A5",
+  "fetched_utc": "2026-10-29T05:42:07+00:00",
+  "rows": 8,
+  "version": "8",
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "id": 778233,
+   "version": 406,
+   "genesymbol": "CYP3A5",
+   "name": "*8",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Unknown function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778232,
+   "citations": [],
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": null,
+    "European": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": null
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 778219,
+   "version": 407,
+   "genesymbol": "CYP3A5",
+   "name": "*1",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Normal function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778218,
+   "citations": [
+    "12893984"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "12893984: testosterone, nifedipine (in vitro)",
+   "frequency": {
+    "Latino": 0.17279238,
+    "European": 0.07410407,
+    "East Asian": 0.25355196,
+    "Near Eastern": 0.121941924,
+    "Central/South Asian": 0.32672024,
+    "Sub-Saharan African": 0.47940862,
+    "African American/Afro-Caribbean": 0.4528548
+   },
+   "inferredfrequency": true
+  },
+  {
+   "id": 778223,
+   "version": 407,
+   "genesymbol": "CYP3A5",
+   "name": "*3",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "No function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778222,
+   "citations": [
+    "15179407"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "15179407: midalozam (in vivo)",
+   "frequency": {
+    "Latino": 0.7651353,
+    "European": 0.9243815,
+    "East Asian": 0.7457923,
+    "Near Eastern": 0.83611745,
+    "Central/South Asian": 0.67327976,
+    "Sub-Saharan African": 0.24094562,
+    "African American/Afro-Caribbean": 0.31597915
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 778229,
+   "version": 406,
+   "genesymbol": "CYP3A5",
+   "name": "*6",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "No function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778228,
+   "citations": [
+    "11279519"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": 0.037054006,
+    "European": 0.0015144596,
+    "East Asian": 0.0006557377,
+    "Near Eastern": 0.038085584,
+    "Central/South Asian": 0.0,
+    "Sub-Saharan African": 0.19323565,
+    "African American/Afro-Caribbean": 0.11116607
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 778231,
+   "version": 407,
+   "genesymbol": "CYP3A5",
+   "name": "*7",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "No function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778230,
+   "citations": [
+    "14515058"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "14515058: midazolam (in vitro)",
+   "frequency": {
+    "Latino": 0.02501835,
+    "European": 0.0,
+    "East Asian": 0.0,
+    "Near Eastern": 0.00385505,
+    "Central/South Asian": null,
+    "Sub-Saharan African": 0.08641013,
+    "African American/Afro-Caribbean": 0.12
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 778235,
+   "version": 406,
+   "genesymbol": "CYP3A5",
+   "name": "*9",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Unknown function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 778234,
+   "citations": [],
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": null,
+    "European": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": null
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 8101127,
+   "version": 8,
+   "genesymbol": "CYP3A5",
+   "name": "*10",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": null,
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 8101126,
+   "citations": null,
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": null,
+   "inferredfrequency": false
+  },
+  {
+   "id": 8101129,
+   "version": 8,
+   "genesymbol": "CYP3A5",
+   "name": "*11",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": null,
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 8101128,
+   "citations": null,
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": null,
+   "inferredfrequency": false
+  }
+ ]
+}

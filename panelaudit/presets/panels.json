@@ -1,0 +1,92 @@
+{
+  "_comment": "Named DPYD panel presets. Published specifications only; see 'source' on each.",
+  "panels": {
+    "cpic4": {
+      "label": "CPIC 4-variant DPYD panel (reaches HapB3 via the tag SNP)",
+      "source": "CPIC DPYD guideline (PMID 29152729) four-variant actionable set; reaches HapB3 via the tag SNP rs56038477.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs56038477"
+      ]
+    },
+    "cpic4_plus_sas": {
+      "label": "CPIC 4-variant panel + 4 star alleles CPIC and the DPWG both call normal function (no added actionable coverage)",
+      "source": "cpic4 plus four star alleles CPIC and the DPWG both assign normal function. Adds no actionable coverage; retained because naming a diplotype requires the star alleles that define it.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs56038477",
+        "rs1801265",
+        "rs1801160",
+        "rs1801159",
+        "rs2297595"
+      ]
+    },
+    "cpic4_causal": {
+      "label": "CPIC 4-variant panel + the causal HapB3 variant c.1129-5923C>G",
+      "source": "cpic4 plus the causal HapB3 variant c.1129-5923C>G (rs75017182); the only preset able to separate a true HapB3 carrier from a tag-only positive.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs56038477",
+        "rs75017182"
+      ]
+    },
+    "amp_tier1": {
+      "label": "AMP/ACMG 2024 Tier 1 must-test set \u2014 all seven variants",
+      "source": "AMP/ACMG/CPIC/CAP/DPWG/ESPT/PharmGKB/PharmVar joint consensus 2024 (PMID 39032821), Tier 1 must-test DPYD variants.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs56038477",
+        "rs75017182",
+        "rs112766203",
+        "rs115232898",
+        "rs146356975"
+      ]
+    },
+    "full": {
+      "label": "All 32 DPYD loci defined in the bundled allele table",
+      "source": "Every DPYD locus the reference allele table defines. Upper bound, not a commercial assay.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs75017182",
+        "rs56038477",
+        "rs112766203",
+        "rs115232898",
+        "rs146356975",
+        "rs55674432",
+        "rs72549304",
+        "rs1801265",
+        "rs1801160",
+        "rs1801159",
+        "rs2297595",
+        "rs1801158",
+        "rs1801266",
+        "rs1801268",
+        "rs78060119",
+        "rs55971861",
+        "rs72549310",
+        "rs72549308",
+        "rs72549307",
+        "rs183385770",
+        "rs143154602",
+        "rs186169810",
+        "rs111858276",
+        "rs59086055",
+        "rs138616379",
+        "rs145773863",
+        "rs137999090",
+        "rs141044036",
+        "rs72547601"
+      ]
+    }
+  }
+}

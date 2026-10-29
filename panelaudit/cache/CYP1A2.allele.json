@@ -1,0 +1,10 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.CYP1A2",
+  "fetched_utc": "2026-10-29T05:41:45+00:00",
+  "rows": 0,
+  "version": null,
+  "licence": "CC0 1.0"
+ },
+ "rows": []
+}

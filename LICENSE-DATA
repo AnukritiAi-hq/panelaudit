@@ -1,0 +1,53 @@
+# Data licence
+
+This repository contains two kinds of file under two different terms.
+
+## Code — Apache License 2.0
+
+Everything under `panelaudit/*.py` and `analysis/*.py`. See `LICENSE`.
+
+## Data — CC0 1.0 Universal
+
+The following are CPIC content or verbatim regenerations of it, and are
+available free of restriction under the Creative Commons CC0 1.0 Universal
+Public Domain Dedication:
+
+- `panelaudit/cache/*.json` — allele and diplotype tables fetched from
+  `https://api.cpicpgx.org/v1`. Each file records the URL it came from and
+  the date it was fetched.
+- `panelaudit/data/**/*.tsv` — per-gene allele definition tables,
+  regenerated verbatim from the same CPIC API. The filename carries the
+  table's own generation version; the CPIC endpoint, table version and
+  fetch date for every result are recorded in `panelaudit/cache/` and
+  printed in each report's provenance block.
+
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+
+## Panel presets
+
+`panelaudit/presets/panels.json` lists published panel specifications. Each
+entry records its source: the CPIC DPYD guideline, or the AMP/ACMG 2024
+joint consensus (PMID 39032821). The lists are facts drawn from those
+publications and are reproduced here for reproducibility, not as original
+content.
+
+## Attribution requested by CPIC
+
+CC0 imposes no condition, but CPIC asks for credit and it is given here in
+full:
+
+> CPIC (Clinical Pharmacogenetics Implementation Consortium),
+> www.clinpgx.org. Curated content is available under CC0 1.0 and is
+> subject to update; the table version and access date are recorded with
+> every result this software produces.
+
+## Trademark
+
+`CPIC®` is a registered service mark of the U.S. Department of Health and
+Human Services. No CPIC mark or logo is reproduced here, and nothing in
+this repository implies CPIC endorsement. CPIC has not reviewed this work.
+
+## What is not here
+
+No PharmVar content (CC BY-SA), no PharmGKB clinical or variant
+annotations, no DPWG tables, no Aldy. One upstream source, one licence.

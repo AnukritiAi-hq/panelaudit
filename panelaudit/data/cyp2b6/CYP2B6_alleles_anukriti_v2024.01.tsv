@@ -1,0 +1,11 @@
+allele	rsid	alt	function
+*4	rs2279343	A	Normal Function
+*5	rs3211371	C	Decreased Function
+*6	rs3745274	T	Decreased Function
+*7	rs3745274;rs2279343	T;A	Decreased Function
+*9	rs4986776	G	Decreased Function
+*13	rs28399499	C	Decreased Function
+*18	rs28399499	T	No Function
+*22	rs34223104	A	Decreased Function
+*26	rs3826711	T	No Function
+*28	rs36060847	T	No Function

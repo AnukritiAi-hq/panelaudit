@@ -1,0 +1,10 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.CYP3A4",
+  "fetched_utc": "2026-10-29T05:42:06+00:00",
+  "rows": 0,
+  "version": null,
+  "licence": "CC0 1.0"
+ },
+ "rows": []
+}

@@ -1,0 +1,63 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.VKORC1",
+  "fetched_utc": "2026-10-29T05:42:24+00:00",
+  "rows": 2,
+  "version": "218",
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "id": 779510,
+   "version": 218,
+   "genesymbol": "VKORC1",
+   "name": "rs9923231 variant (T)",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": null,
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779509,
+   "citations": null,
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": 0.39330897,
+    "American": 0.6160526,
+    "European": 0.4132605,
+    "East Asian": 0.8664911,
+    "Near Eastern": 0.45357868,
+    "Central/South Asian": 0.15644945,
+    "Sub-Saharan African": 0.107742354,
+    "African American/Afro-Caribbean": 0.101332836
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779508,
+   "version": 218,
+   "genesymbol": "VKORC1",
+   "name": "rs9923231 reference (C)",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": null,
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779507,
+   "citations": null,
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": 0.606691,
+    "American": 0.38394737,
+    "European": 0.58673954,
+    "East Asian": 0.13350892,
+    "Near Eastern": 0.5464213,
+    "Central/South Asian": 0.84355056,
+    "Sub-Saharan African": 0.89225763,
+    "African American/Afro-Caribbean": 0.89866716
+   },
+   "inferredfrequency": true
+  }
+ ]
+}
