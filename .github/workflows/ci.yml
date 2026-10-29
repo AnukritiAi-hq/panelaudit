@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
 
+# This repository is public, so a pull request can come from anyone. The
+# workflow needs nothing but the code, and a token that can only read is
+# a token a malicious pull request cannot use.
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
