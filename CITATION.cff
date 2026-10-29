@@ -9,7 +9,7 @@ authors:
     family-names: R B
     email: abhi@anukritiai.com
     affiliation: Anukriti AI
-repository-code: "https://github.com/<org>/panelaudit"
+repository-code: "https://github.com/AnukritiAi-hq/panelaudit"
 abstract: >-
   Panel-first pharmacogenomic audit. Enumerates every diplotype expressible
   from CPIC allele definitions, projects each onto a candidate genotyping

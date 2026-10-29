@@ -51,7 +51,7 @@ failure this whole package exists to expose.
 Python 3.10+. **No third-party packages**, nothing to install.
 
 ```bash
-git clone https://github.com/<org>/panelaudit.git
+git clone https://github.com/AnukritiAi-hq/panelaudit.git
 cd panelaudit
 python -m panelaudit --self-check
 ```
