@@ -127,6 +127,22 @@ Investigational. Describes an assay, not a person. Computes no dose, names
 no patient, asserts nothing clinical CPIC does not publish. Carries no
 clinician sign-off.
 
+## Licence stability
+
+This package stays under Apache-2.0 with its data under CC0 1.0, and will
+not be relicensed to more restrictive terms.
+
+That is a commitment, not a default. The accompanying paper argues that
+deployed genotyping panels misclassify phenotypes, and its author has a
+commercial interest in that conclusion. The competing-interests
+declaration rests on the fact that this software is free to obtain,
+inspect, modify and use — including commercially — so that no reader has
+to take the result on trust. Narrowing the licence later would retro-
+actively undercut a published declaration.
+
+A separate engine, `anukriti-pgx-core`, is licensed differently. It is not
+used here and is not needed to reproduce any published result.
+
 ## Reproducing the published tables
 
 ```bash

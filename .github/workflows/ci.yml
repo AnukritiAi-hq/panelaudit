@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: self-check and reproduce (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # No install step and no dependency cache on purpose: the README
+      # claims no third-party packages, and a CI run that pip-installed
+      # something would stop testing that claim.
+      - name: Every invariant
+        run: python -m panelaudit --self-check
+
+      - name: Refusals are named, not silent
+        run: |
+          python -m panelaudit --genes | tee genes.txt
+          for g in CYP2D6 G6PD SLCO1B1 NAT2 VKORC1 CYP1A2 CYP3A4; do
+            grep -q "^  $g " genes.txt || { echo "::error::$g is not refused by name"; exit 1; }
+          done
+
+      - name: The published tables still reproduce
+        run: |
+          python -m analysis.equity_table | tee equity.txt
+          # Headline rows from the accompanying preprint. If CPIC's pinned
+          # snapshot or the optimiser changes, these move and the paper's
+          # numbers no longer match the archived code.
+          grep -qE 'CYP2C19 +Oceanian +27,133 +0 +27,133' equity.txt
+          grep -qE 'DPYD +Sub-Saharan African +5,508 +0 +5,508' equity.txt
+          grep -qE 'CYP3A5 +Latino +4,941 +0 +4,941' equity.txt
+          python -m panelaudit --gene DPYD --all-panels | tee panels.txt
+          grep -q 'full *32 loci' panels.txt
+
+  single-source:
+    name: CPIC is the only upstream
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The README claims "one source, one licence": CPIC only, CC0 1.0, no
+      # PharmVar, no DPWG, no PharmGKB clinical annotations. That claim is
+      # what makes the licence position defensible, so assert it mechanically
+      # rather than trusting it to stay true.
+      - name: No upstream host other than CPIC
+        run: |
+          hosts=$(grep -rhoE 'https?://[A-Za-z0-9.-]+' panelaudit/*.py analysis/*.py \
+                  | sed 's|https\?://||' | sort -u)
+          echo "referenced hosts:"; echo "$hosts" | sed 's/^/  /'
+          for h in $hosts; do
+            case "$h" in
+              api.cpicpgx.org|www.clinpgx.org|github.com|creativecommons.org) ;;
+              *) echo "::error::unexpected upstream host: $h"; exit 1 ;;
+            esac
+          done
+
+      - name: Cached tables all came from CPIC
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          bad = []
+          files = sorted(pathlib.Path("panelaudit/cache").glob("*.json"))
+          assert files, "no cached tables found"
+          for p in files:
+              src = json.loads(p.read_text()).get("provenance", {}).get("source", "")
+              if not src.startswith("https://api.cpicpgx.org/v1/"):
+                  bad.append((p.name, src))
+          if bad:
+              for n, s in bad:
+                  print(f"::error::{n} was not fetched from CPIC: {s!r}")
+              sys.exit(1)
+          print(f"{len(files)} cached tables, all from api.cpicpgx.org")
+          PY
