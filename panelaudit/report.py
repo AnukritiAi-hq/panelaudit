@@ -137,7 +137,7 @@ def as_text(payload: dict[str, Any], worst: int = 10) -> str:
     adds = payload["recommended_additions"]
     if adds:
         add("")
-        add("  Add one locus, ranked by carrier burden recovered:")
+        add("  Add one locus, ranked by fall in modeled wrong-phenotype rate:")
         for a in adds:
             gained = ", ".join(a["alleles_gained"]) or "(partial coverage)"
             add(f"    {a['add_loci'][0]:<14} recovers {a['recovers_per_100k']:>8.1f}/100k"

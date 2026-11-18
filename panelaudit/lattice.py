@@ -241,9 +241,16 @@ def rank_additions(gene: Gene, panel: frozenset[str], population: str) -> list[A
     """Which single locus, added next, removes the most wrong calls.
 
     This is the actionable half. A coverage gap tells a lab what it cannot
-    see; this tells it what to buy. Each candidate is scored by the carrier
-    burden it moves out of WRONG, so the ranking is by people rather than
-    by positions.
+    see; this tells it what to buy. Each candidate is scored by the fall in
+    the modeled wrong-phenotype rate, so the ranking is by consequence
+    rather than by positions.
+
+    Note what the number is and is not. ``recovered_per_100k`` is
+    ``wrong_before - wrong_after``: a difference of two modeled discrepancy
+    rates under one set of reference frequencies. It is not a count of
+    carriers, and it is not an observed number of people. An earlier
+    version of this docstring called it "carrier burden", which read as a
+    headcount and travelled into downstream copy as one.
 
     Greedy and one-at-a-time by design. Loci interact — adding the HapB3
     causal variant changes what the tag SNP is worth — so re-run after each
@@ -270,7 +277,7 @@ def greedy_panel(
 ) -> tuple[frozenset[str], list[float]]:
     """Build the ``size``-locus panel that minimises wrong calls here.
 
-    Greedy: take the locus that removes the most carrier burden, then
+    Greedy: take the locus that removes the most modeled error, then
     re-rank and repeat. Greedy is not guaranteed optimal — loci interact,
     and a pair can be worth more than either alone — but re-ranking after
     every pick captures the common interactions, and the result is a
