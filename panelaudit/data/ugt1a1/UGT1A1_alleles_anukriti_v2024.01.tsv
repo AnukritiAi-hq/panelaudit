@@ -1,0 +1,9 @@
+allele	rsid	alt	function
+*6	rs4148323	A	Decreased function
+*27	rs35350960	A	Decreased function
+*28	rs3064744	TA(8)	Decreased function
+*36	rs3064744	TA(6)	Increased function
+*37	rs3064744	TA(9)	Decreased function
+*80	rs887829	T	Unknown function
+*80+*28	rs887829;rs3064744	T;TA(8)	Decreased function
+*80+*37	rs887829;rs3064744	T;TA(9)	Decreased function

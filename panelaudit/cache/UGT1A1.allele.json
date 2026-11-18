@@ -1,0 +1,275 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele?genesymbol=eq.UGT1A1",
+  "fetched_utc": "2026-11-18T11:16:18+00:00",
+  "rows": 9,
+  "version": "394",
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "id": 779491,
+   "version": 393,
+   "genesymbol": "UGT1A1",
+   "name": "*6",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779490,
+   "citations": [
+    "7715297",
+    "8280139",
+    "15179405",
+    "11906189"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "15179405: SNS-38 (in vivo) - based on protein quantification; 11906189: bilirubin (in vivo) - based on protein quantification",
+   "frequency": {
+    "Latino": 0.011556196,
+    "European": 0.007872763,
+    "Oceanian": null,
+    "East Asian": 0.1463455,
+    "Near Eastern": 0.0,
+    "Central/South Asian": 0.044862628,
+    "Sub-Saharan African": 0.0,
+    "African American/Afro-Caribbean": 0.003986928
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779493,
+   "version": 393,
+   "genesymbol": "UGT1A1",
+   "name": "*27",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779492,
+   "citations": [
+    "7565971",
+    "7715297",
+    "15179405"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "7715297: bilirubin (in vivo) - based on protein quantification; 15179405: SNS-38 (in vivo) - based on protein quantification",
+   "frequency": {
+    "Latino": null,
+    "European": null,
+    "Oceanian": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": null
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779503,
+   "version": 392,
+   "genesymbol": "UGT1A1",
+   "name": "*80+*28",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779502,
+   "citations": [
+    "21309756",
+    "19414484",
+    "22085899",
+    "19419973"
+   ],
+   "strength": null,
+   "functioncomments": "UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. However, the function of the *80 allele alone, in the absence of *28 or *37, is uncertain. If a patient is only tested for *80, decreased function may be inferred.",
+   "findings": null,
+   "frequency": {
+    "Latino": null,
+    "European": null,
+    "Oceanian": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": null
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779489,
+   "version": 394,
+   "genesymbol": "UGT1A1",
+   "name": "*1",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Normal function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779488,
+   "citations": [
+    "7565971",
+    "9653159",
+    "15179405"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "15179405: SNS-38 (in vivo) - based on protein quantification",
+   "frequency": {
+    "Latino": 0.20571208,
+    "European": 0.36072147,
+    "Oceanian": 0.95679015,
+    "East Asian": 0.7056254,
+    "Near Eastern": 0.6801109,
+    "Central/South Asian": 0.5409231,
+    "Sub-Saharan African": 0.4930486,
+    "African American/Afro-Caribbean": 0.03087449
+   },
+   "inferredfrequency": true
+  },
+  {
+   "id": 779499,
+   "version": 392,
+   "genesymbol": "UGT1A1",
+   "name": "*37",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779498,
+   "citations": [
+    "9653159"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": 0.0,
+    "European": 0.00068587105,
+    "Oceanian": 0.0,
+    "East Asian": 0.0,
+    "Near Eastern": 0.004330254,
+    "Central/South Asian": 0.0,
+    "Sub-Saharan African": 0.037069373,
+    "African American/Afro-Caribbean": 0.057007298
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779497,
+   "version": 392,
+   "genesymbol": "UGT1A1",
+   "name": "*36",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Increased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779496,
+   "citations": [
+    "9653159"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": null,
+   "frequency": {
+    "Latino": 0.0,
+    "European": 0.0,
+    "Oceanian": 0.0,
+    "East Asian": 0.0,
+    "Near Eastern": 0.007933025,
+    "Central/South Asian": 0.0,
+    "Sub-Saharan African": 0.069839545,
+    "African American/Afro-Caribbean": 0.084452555
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779505,
+   "version": 392,
+   "genesymbol": "UGT1A1",
+   "name": "*80+*37",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779504,
+   "citations": [
+    "21309756",
+    "19414484",
+    "22085899",
+    "19419973"
+   ],
+   "strength": null,
+   "functioncomments": "UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. However, the function of the *80 allele alone, in the absence of *28 or *37, is uncertain. If a patient is only tested for *80, decreased function may be inferred.",
+   "findings": null,
+   "frequency": {
+    "Latino": null,
+    "European": null,
+    "Oceanian": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": null
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779495,
+   "version": 393,
+   "genesymbol": "UGT1A1",
+   "name": "*28",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Decreased function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779494,
+   "citations": [
+    "9653159",
+    "15179405"
+   ],
+   "strength": null,
+   "functioncomments": null,
+   "findings": "15179405: SNS-38 (in vivo) - based on protein quantification",
+   "frequency": {
+    "Latino": 0.4,
+    "European": 0.31647462,
+    "Oceanian": 0.043209877,
+    "East Asian": 0.14802907,
+    "Near Eastern": 0.30762586,
+    "Central/South Asian": 0.41421428,
+    "Sub-Saharan African": 0.40004247,
+    "African American/Afro-Caribbean": 0.37335765
+   },
+   "inferredfrequency": false
+  },
+  {
+   "id": 779501,
+   "version": 392,
+   "genesymbol": "UGT1A1",
+   "name": "*80",
+   "functionalstatus": null,
+   "clinicalfunctionalstatus": "Unknown function",
+   "clinicalfunctionalsubstrate": null,
+   "activityvalue": null,
+   "definitionid": 779500,
+   "citations": [],
+   "strength": null,
+   "functioncomments": "UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. However, the function of the *80 allele alone, in the absence of *28 or *37, is uncertain. If a patient is only tested for *80, decreased function may be inferred.",
+   "findings": null,
+   "frequency": {
+    "Latino": 0.3827317,
+    "European": 0.31424528,
+    "Oceanian": null,
+    "East Asian": null,
+    "Near Eastern": null,
+    "Central/South Asian": null,
+    "Sub-Saharan African": null,
+    "African American/Afro-Caribbean": 0.4503211
+   },
+   "inferredfrequency": false
+  }
+ ]
+}

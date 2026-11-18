@@ -1,0 +1,55 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/sequence_location?genesymbol=eq.UGT1A1",
+  "fetched_utc": "2026-11-18T11:16:32+00:00",
+  "rows": 4,
+  "version": "99",
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "id": 779484,
+   "version": 108,
+   "name": "-364C>T",
+   "chromosomelocation": "g.233759924C>T",
+   "genelocation": "g.175181C>T",
+   "proteinlocation": "5' Flanking",
+   "genesymbol": "UGT1A1",
+   "dbsnpid": "rs887829",
+   "position": 233759924
+  },
+  {
+   "id": 1000510,
+   "version": 99,
+   "name": "CA(TA)5TAA CA(TA)6TAA CA(TA)7TAA CA(TA)8TAA",
+   "chromosomelocation": "g.233760235TA[6]; g.233760235TA[7]; g.233760235TA[8]; g.233760235TA[9]",
+   "genelocation": "g.175492TA[6]; g.175492TA[7]; g.175492TA[8]; g.175492TA[9]",
+   "proteinlocation": "5' Flanking",
+   "genesymbol": "UGT1A1",
+   "dbsnpid": "rs3064744",
+   "position": 233760235
+  },
+  {
+   "id": 779486,
+   "version": 108,
+   "name": "211G>A",
+   "chromosomelocation": "g.233760498G>A",
+   "genelocation": "g.175755G>A",
+   "proteinlocation": "p.G71R",
+   "genesymbol": "UGT1A1",
+   "dbsnpid": "rs4148323",
+   "position": 233760498
+  },
+  {
+   "id": 779487,
+   "version": 108,
+   "name": "686C>A",
+   "chromosomelocation": "g.233760973C>A",
+   "genelocation": "g.176230C>A",
+   "proteinlocation": "p.P229Q",
+   "genesymbol": "UGT1A1",
+   "dbsnpid": "rs35350960",
+   "position": 233760973
+  }
+ ]
+}

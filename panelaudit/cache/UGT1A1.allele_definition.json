@@ -1,0 +1,92 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/allele_definition?genesymbol=eq.UGT1A1",
+  "fetched_utc": "2026-11-18T11:16:31+00:00",
+  "rows": 9,
+  "version": "107",
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "id": 779488,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*1",
+   "pharmvarid": null,
+   "matchesreferencesequence": true,
+   "structuralvariation": false
+  },
+  {
+   "id": 779490,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*6",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779492,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*27",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779494,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*28",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779496,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*36",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779498,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*37",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779502,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*80+*28",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779504,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*80+*37",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  },
+  {
+   "id": 779500,
+   "version": 107,
+   "genesymbol": "UGT1A1",
+   "name": "*80",
+   "pharmvarid": null,
+   "matchesreferencesequence": false,
+   "structuralvariation": false
+  }
+ ]
+}

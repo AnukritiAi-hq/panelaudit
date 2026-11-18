@@ -64,6 +64,19 @@ EXCLUDED: dict[str, str] = {
         "resolves. This is a defect in the NAT2 allele table, not a limit of "
         "the model — and NAT2 is CPIC Level C with no guideline anyway."
     ),
+    "UGT1A1": (
+        "three alleles share one defining position and do not share a function. "
+        "CPIC defines *28, *36 and *37 at rs3064744 by (TA)n repeat length — "
+        "TA(8), TA(6) and TA(9) against a TA(7) reference — and *36 is Increased "
+        "function where the other two are Decreased. This model keys an allele by "
+        "the SET of positions that define it, so all three collapse to one entry "
+        "and a *36 carrier is reported as *28: Increased function called as "
+        "Decreased, an overcall in the direction of an unnecessary dose "
+        "reduction. Measured 2026-11-18 against every population CPIC publishes. "
+        "The allele table is bundled and verified at data/ugt1a1/ and this gene "
+        "becomes auditable as soon as the model keys alleles by (position, "
+        "allele) pairs rather than by position alone."
+    ),
     "VKORC1": "CPIC publishes no diplotype table.",
     "CYP1A2": "CPIC publishes no allele or diplotype table.",
     "CYP3A4": "CPIC publishes no allele or diplotype table.",

@@ -1,0 +1,992 @@
+{
+ "provenance": {
+  "source": "https://api.cpicpgx.org/v1/diplotype?genesymbol=eq.UGT1A1",
+  "fetched_utc": "2026-11-18T11:16:19+00:00",
+  "rows": 45,
+  "version": null,
+  "licence": "CC0 1.0"
+ },
+ "rows": [
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*36/*36",
+   "function1": "Increased function",
+   "function2": "Increased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two increased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*36": 2
+    }
+   },
+   "generesult": "Normal Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has two copies of a normal function allele (*1) OR one copy of a normal function allele (*1) and one copy of an increased function allele (*36) OR two copies of an increased function allele (*36). Based on the genotype result this patient is predicted to be an normal metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Normal Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*36",
+   "function1": "Increased function",
+   "function2": "Normal function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one increased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*36": 1
+    }
+   },
+   "generesult": "Normal Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has two copies of a normal function allele (*1) OR one copy of a normal function allele (*1) and one copy of an increased function allele (*36) OR two copies of an increased function allele (*36). Based on the genotype result this patient is predicted to be an normal metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Normal Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*1",
+   "function1": "Normal function",
+   "function2": "Normal function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two normal function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 2
+    }
+   },
+   "generesult": "Normal Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has two copies of a normal function allele (*1) OR one copy of a normal function allele (*1) and one copy of an increased function allele (*36) OR two copies of an increased function allele (*36). Based on the genotype result this patient is predicted to be an normal metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Normal Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*36",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*36": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*36",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 1,
+     "*36": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*36/*37",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*36": 1,
+     "*37": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*36/*80+*28",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*36": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*36/*80+*37",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*36": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*36",
+   "function1": "Increased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*36": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*27",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*27": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*28",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*28": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*37",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*37": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*6",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*6": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*80+*28",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*80+*37",
+   "function1": "Normal function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one decreased function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Intermediate Metabolizer",
+   "ehrpriority": "Normal/Routine/Low Risk",
+   "consultationtext": "This result signifies that the patient has one copy of a normal function allele (*1) OR one copy of an increased function allele (*36), AND and one copy of a decreased function allele (*_). Based on the genotype result this patient is predicted to be an intermediate metabolizer of UGT1A1 substrates. There is no reason to selectively adjust the dose of most medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Intermediate Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*27",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*37/*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*37": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*6",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80+*28/*80+*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80+*28": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80+*37/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80+*37": 2
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*80+*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 1,
+     "*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*80+*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*37/*80+*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*37": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*37/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*37": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*27",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*27": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*80+*28",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80+*28/*80+*37",
+   "function1": "Decreased function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two decreased function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80+*28": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Poor Metabolizer",
+   "ehrpriority": "Abnormal/Priority/High Risk",
+   "consultationtext": "This result signifies that the patient has two copies of decreased function alleles (*_ and *_). Based on the genotype result this patient is predicted to be a poor metabolizer of UGT1A1 substrates. This patient may be at risk for an adverse or poor response to medications that inhibit or are inactivated by UGT1A1. Based on the genotype result, this patient is predicted to have low UGT1A1 function, which is generally indicative of Gilbert syndrome. This patient may be at high risk for toxicity from select medications that inhibit or are inactivated by UGT1A1. Please consult a clinical pharmacist for more information about how UGT1A1 metabolic status influences drug selection and dosing.",
+   "lookupkey": {
+    "UGT1A1": "Poor Metabolizer"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*36/*80",
+   "function1": "Unknown function",
+   "function2": "Increased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one increased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*36": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*1/*80",
+   "function1": "Unknown function",
+   "function2": "Normal function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one normal function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*1": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*27/*80",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*27": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*28/*80",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*28": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*37/*80",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*37": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*6/*80",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*6": 1,
+     "*80": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80/*80+*28",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80": 1,
+     "*80+*28": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80/*80+*37",
+   "function1": "Unknown function",
+   "function2": "Decreased function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying one decreased function allele and one unknown function allele",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80": 1,
+     "*80+*37": 1
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  },
+  {
+   "genesymbol": "UGT1A1",
+   "diplotype": "*80/*80",
+   "function1": "Unknown function",
+   "function2": "Unknown function",
+   "activityvalue1": "n/a",
+   "activityvalue2": "n/a",
+   "totalactivityscore": "n/a",
+   "description": "An individual carrying two unknown function alleles",
+   "diplotypekey": {
+    "UGT1A1": {
+     "*80": 2
+    }
+   },
+   "generesult": "Indeterminate",
+   "ehrpriority": "none",
+   "consultationtext": "This result signifies that the patient has an allele combination with uncertain and/or unknown function alleles. The expected phenotype for this patient cannot be determined currently based on the UGT1A1 diplotype result. UGT1A1*80 is in very high linkage disequilibrium with *28 and *37. In the rare event that *80 is detected but *28 and *37 are not, there are not enough clinical data to predict metabolizer status with certainty. However, if only *80 is interrogated and the patient is heterozygous or homozygous for *80, an intermediate or poor metabolizer phenotype may be inferred, respectively. Please consult a clinical pharmacist for more specific information about how UGT1A1 function influences drug dosing.",
+   "lookupkey": {
+    "UGT1A1": "Indeterminate"
+   }
+  }
+ ]
+}
