@@ -95,18 +95,24 @@ def run() -> int:
     every_locus = frozenset().union(*(a.rsids for a in dpyd.alleles.values()))
     assert all(c.verdict == CORRECT for c in audit(dpyd, every_locus, SAS))
 
-    # The "full" preset is NOT that panel, and the lattice is how you find
-    # out: 32 loci against 35 defined alleles. *3 and *7 are absent, both No
-    # function, so 71 diplotypes come back a phenotype too mild. This is the
-    # recorded 32-vs-35 drift, rediscovered from the other direction. When
-    # the preset gains the two loci this fails, and that is the signal to
-    # delete this check.
+    # The "full" preset must BE that panel. It was not until 2026-11-18: it
+    # carried 32 of the 34 defined loci, missing *3 (rs72549303) and *7
+    # (rs72549309), and 71 diplotypes came back a phenotype too mild as a
+    # result. Both are deletions, and both were missed for the same reason —
+    # the allele table names them by a left-aligned spelling (c.1898delC,
+    # c.295_298delTCAT) while dbSNP's MANE HGVS on NM_000110.4 reads c.1898del
+    # and c.299_302del. An indel joined on its name rather than its rsID
+    # disappears, and a panel audit that quietly drops a No-function allele
+    # reports the gap as smaller than it is.
+    #
+    # This now asserts completeness rather than the defect. If the allele
+    # table ever gains a locus the preset does not, this fails — which is the
+    # point.
     full_preset = frozenset(presets()["full"][1])
     untyped = {n for n, a in dpyd.alleles.items() if a.rsids and not (a.rsids & full_preset)}
-    assert untyped == {"*3", "*7"}, untyped
-    wrong = [c for c in audit(dpyd, full_preset, SAS) if c.verdict != CORRECT]
-    assert len(wrong) == 71, len(wrong)
-    assert all(c.direction == UNDERCALL for c in wrong)
+    assert untyped == set(), untyped
+    assert full_preset == every_locus, every_locus ^ full_preset
+    assert all(c.verdict == CORRECT for c in audit(dpyd, full_preset, SAS))
 
     # --- frequency -------------------------------------------------------
     # Hardy-Weinberg: p^2 for a homozygote, 2pq for a heterozygote.

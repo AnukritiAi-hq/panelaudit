@@ -50,9 +50,29 @@
         "rs146356975"
       ]
     },
+    "amp_tier1_tier2": {
+      "label": "AMP/ACMG 2024 Tier 1 + Tier 2 \u2014 all thirteen variants",
+      "source": "AMP/ACMG/CPIC/CAP/DPWG/ESPT/PharmGKB/PharmVar joint consensus 2024 (PMID 39032821, J Mol Diagn), Tier 1 must-test set plus the six Tier 2 variants of Table 3, which the paper names on NM_000110.4 as c.299_302del, c.703C>T, c.1314T>G, c.1475C>T, c.1774C>T, c.2639G>T. Tier 2 is defined there as meeting at least one but not all Tier 1 criteria, and the authors note Tier 2 variants may be reclassified to Tier 1 as reference materials appear. Fourteen loci for thirteen variants because HapB3 is typed at both the tag rs56038477 and the causal rs75017182, following the amp_tier1 convention.",
+      "loci": [
+        "rs3918290",
+        "rs55886062",
+        "rs67376798",
+        "rs56038477",
+        "rs75017182",
+        "rs112766203",
+        "rs115232898",
+        "rs146356975",
+        "rs72549309",
+        "rs1801266",
+        "rs186169810",
+        "rs72549304",
+        "rs59086055",
+        "rs55674432"
+      ]
+    },
     "full": {
-      "label": "All 32 DPYD loci defined in the bundled allele table",
-      "source": "Every DPYD locus the reference allele table defines. Upper bound, not a commercial assay.",
+      "label": "All 34 DPYD loci defined in the bundled allele table",
+      "source": "Every DPYD locus the reference allele table defines. Upper bound, not a commercial assay. rs72549303 (*3) and rs72549309 (*7) are deletions; they were absent until 2026-11-18 because the allele table names them by a left-aligned spelling (c.1898delC, c.295_298delTCAT) that a string join misses. Both confirmed in dbSNP against MANE transcript NM_000110.4 as c.1898del and c.299_302del.",
       "loci": [
         "rs3918290",
         "rs55886062",
@@ -85,7 +105,9 @@
         "rs145773863",
         "rs137999090",
         "rs141044036",
-        "rs72547601"
+        "rs72547601",
+        "rs72549303",
+        "rs72549309"
       ]
     }
   }
