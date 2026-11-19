@@ -60,6 +60,7 @@ def as_json(
         "gene": gene.symbol,
         "panel": {"name": panel_name, "loci": sorted(panel), "count": len(panel)},
         "population": population,
+        "frequency_source": gene.provenance.get("frequency_source", "cpic"),
         "summary": {
             "diplotypes": summary.total,
             "correct": summary.correct,
@@ -108,6 +109,7 @@ def as_text(payload: dict[str, Any], worst: int = 10) -> str:
         f"({payload['panel']['count']} loci)")
     if payload["population"]:
         add(f"population: {payload['population']}")
+        add(f"weights:    {payload.get('frequency_source', 'cpic')} allele frequencies")
     add("")
     add(f"  {s['correct']} of {s['diplotypes']} diplotypes reported correctly")
     add(f"  {s['wrong']} wrong, {s['no_call']} no-call")
@@ -150,3 +152,80 @@ def as_text(payload: dict[str, Any], worst: int = 10) -> str:
 
 def dumps(payload: dict[str, Any]) -> str:
     return json.dumps(payload, indent=2)
+
+
+def frequency_comparison(gene_symbol: str, refresh: bool = False) -> str:
+    """Where CPIC and gnomAD disagree about this gene's allele frequencies.
+
+    Neither column is the truth. The point is the third one: a panel
+    decision that flips depending on which source weighted it is a decision
+    resting on the choice of reference rather than on the assay.
+    """
+    from .gnomad import POPULATIONS, REFUSED, GnomadUnavailable  # noqa: PLC0415
+    from .model import load_gene  # noqa: PLC0415
+
+    cpic_gene = load_gene(gene_symbol, refresh=refresh)
+    try:
+        gnomad_gene = load_gene(gene_symbol, refresh=refresh, frequencies="gnomad")
+    except GnomadUnavailable as exc:
+        return f"  {exc}"
+
+    out: list[str] = []
+    add = out.append
+    add(f"{cpic_gene.symbol} — CPIC vs gnomAD v4 allele frequencies")
+    add("")
+    add("  Rates in every other report are weighted by one of these. Where they")
+    add("  disagree by more than a factor of two, the rate is a property of the")
+    add("  source as much as of the panel.")
+    add("")
+
+    rows: list[tuple[float, str]] = []
+    for name in sorted(cpic_gene.alleles):
+        allele = cpic_gene.alleles[name]
+        if len(allele.rsids) != 1:
+            continue
+        other = gnomad_gene.alleles.get(name)
+        for pop in POPULATIONS:
+            c = allele.frequencies.get(pop)
+            g = (other.frequencies.get(pop) if other else None)
+            if c is None or g is None:
+                continue
+            if c == 0 and g == 0:
+                continue
+            if c > 0 and g > 0:
+                ratio = max(c / g, g / c)
+                verdict = f"{ratio:4.0f}x  {'CPIC over' if c > g else 'CPIC under'}"
+            else:
+                ratio = float("inf")
+                verdict = "CPIC reports zero" if c == 0 else "absent from gnomAD"
+            if ratio < 2:
+                continue
+            # Rank by how much the disagreement could move a rate, not by the
+            # ratio. A tenfold disagreement between 0.00002% and 0.0002% changes
+            # nothing; CPIC calling a 0.23% allele absent changes a report.
+            rows.append((abs(c - g), f"  {name:<16s} {pop:<32s}"
+                                     f" {c * 100:9.5f}%  {g * 100:9.5f}%   {verdict}"))
+
+    if not rows:
+        add("  No disagreement beyond a factor of two.")
+    else:
+        add(f"  {'allele':<16s} {'population':<32s} {'CPIC':>10s}  {'gnomAD':>9s}"
+            f"   ranked by how far apart they are")
+        for _, line in sorted(rows, key=lambda r: -r[0]):
+            add(line)
+
+    add("")
+    add("  Populations gnomAD is not asked for:")
+    for pop, why in REFUSED.items():
+        if pop in cpic_gene.populations:
+            add(f"    {pop} — {why}")
+    multi = sorted(n for n, a in cpic_gene.alleles.items() if len(a.rsids) > 1)
+    if multi:
+        add("")
+        add(f"  Alleles with no gnomAD weight, defined by more than one position:"
+            f" {', '.join(multi)}.")
+        add("  gnomAD is keyed by position, so a haplotype has no single frequency")
+        add("  there. Under --frequencies gnomad these carry no weight at all.")
+    add("")
+    add(f"  {gnomad_gene.provenance['frequencies']['source']}")
+    return "\n".join(out)

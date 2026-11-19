@@ -184,3 +184,41 @@ This package describes an assay. It does not describe a person. If you need
 the other direction — a real genome called, the uncertain parts refused by
 name, and a report that discloses which positions were observed rather than
 assumed — that is the service, not this repository. Get in touch.
+
+## Which frequencies weight the rates
+
+Every rate here is a frequency-weighted count, so it inherits whatever
+allele frequencies it was weighted by. Two sources are available:
+
+```
+python -m panelaudit --population "European"                        # CPIC (default)
+python -m panelaudit --population "European" --frequencies gnomad   # gnomAD v4
+python -m panelaudit --compare-frequencies                          # where they differ
+```
+
+They differ more than you would hope. For DPYD, CPIC overstates `*2A` — the
+most clinically used allele in the gene — by 4x in Central/South Asian, 4x in
+European and 12x in African American, and records `c.868A>G` as absent in
+African ancestry where gnomAD measures 0.23%. Four DPYD alleles share an
+identical African-American frequency of 0.0031083, which is 1/321.7: one
+observed allele in about 161 genotyped people, a singleton floor rather than
+a measurement.
+
+Neither column is the truth. CPIC curates from the pharmacogenomic literature
+and is what the guideline rests on; gnomAD is a far larger convenience sample
+with its own ascertainment. The useful output is the disagreement, because a
+panel decision that flips between the two is resting on the choice of
+reference rather than on the assay.
+
+Under `--frequencies gnomad` some weights are deliberately absent:
+
+- **Populations gnomAD cannot answer** are dropped, not approximated. CPIC's
+  Sub-Saharan African has no counterpart, because gnomAD's `afr` pools
+  African American with continental African and is already in use for CPIC's
+  African American/Afro-Caribbean.
+- **Haplotypes** have no single position, so HapB3 carries no gnomAD weight.
+- **Components of a haplotype** carry none either. `c.1236G>A` is the HapB3
+  tag and does have a position-level frequency in gnomAD; weighting it
+  independently would count HapB3 carriers twice and treat a tag as causal.
+
+Alleles left unweighted are reported, never silently zeroed.

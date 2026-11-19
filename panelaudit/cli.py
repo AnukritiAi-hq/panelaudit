@@ -21,14 +21,21 @@ DEFAULT_POPULATION = "Central/South Asian"
 
 
 def _run(gene_symbol: str, spec: str, population: str | None, refresh: bool,
-         worst: int, suggest: bool) -> dict:
-    gene = load_gene(gene_symbol, refresh=refresh)
+         worst: int, suggest: bool, frequencies: str = "cpic") -> dict:
+    gene = load_gene(gene_symbol, refresh=refresh, frequencies=frequencies)
     label, loci, panel_file = resolve(spec)
 
     if population and population not in gene.populations:
+        source = gene.provenance.get("frequency_source", "cpic")
+        extra = ""
+        if source == "gnomad":
+            from .gnomad import REFUSED  # noqa: PLC0415
+
+            if population in REFUSED:
+                extra = f"\n  Refused on purpose: {REFUSED[population]}"
         raise SystemExit(
-            f"{gene.symbol}: CPIC publishes no frequencies for {population!r}. "
-            f"Available: {', '.join(gene.populations)}"
+            f"{gene.symbol}: {source} publishes no frequencies for {population!r}. "
+            f"Available: {', '.join(gene.populations)}{extra}"
         )
 
     # A panel for another gene produces a full page of confident findings
@@ -68,6 +75,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--json", metavar="PATH", help="write the full report as JSON")
     ap.add_argument("--worst", type=int, default=10, help="worst cases to show")
     ap.add_argument("--no-suggest", action="store_true", help="skip the addition ranking")
+    ap.add_argument("--frequencies", choices=("cpic", "gnomad"), default="cpic",
+                    help="which allele frequencies weight the rates (default: cpic)")
+    ap.add_argument("--compare-frequencies", action="store_true",
+                    help="show where CPIC and gnomAD disagree for this gene, and exit")
     ap.add_argument("--refresh", action="store_true", help="re-fetch CPIC tables")
     ap.add_argument("--self-check", action="store_true", help="run assertions and exit")
     args = ap.parse_args(argv)
@@ -88,8 +99,14 @@ def main(argv: list[str] | None = None) -> int:
 
     population = None if args.population.lower() == "none" else args.population
 
+    if args.compare_frequencies:
+        from .report import frequency_comparison  # noqa: PLC0415
+
+        print(frequency_comparison(args.gene, refresh=args.refresh))
+        return 0
+
     if args.all_panels:
-        gene = load_gene(args.gene, refresh=args.refresh)
+        gene = load_gene(args.gene, refresh=args.refresh, frequencies=args.frequencies)
         print(f"{gene.symbol} — every preset"
               + (f", weighted for {population}" if population else ""))
         print()
@@ -105,7 +122,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     payload = _run(args.gene, args.panel, population, args.refresh,
-                   args.worst, not args.no_suggest)
+                   args.worst, not args.no_suggest, frequencies=args.frequencies)
     print(_report.as_text(payload, worst=args.worst))
 
     if args.json:

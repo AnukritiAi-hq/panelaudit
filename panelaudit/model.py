@@ -326,7 +326,16 @@ def _name_index(cpic_rows: list[dict]) -> dict[str, dict]:
     return index
 
 
-def load_gene(symbol: str, refresh: bool = False) -> Gene:
+def load_gene(symbol: str, refresh: bool = False, frequencies: str = "cpic") -> Gene:
+    """Build the gene model. ``frequencies`` selects the weighting source.
+
+    ``"cpic"`` uses the frequencies CPIC publishes beside each allele, which
+    is what the guideline is written on. ``"gnomad"`` replaces them with
+    gnomAD v4 measurements for the populations that map (see
+    ``gnomad.POPULATIONS``); populations gnomAD cannot answer are dropped
+    rather than filled in, so a rate is never computed from a weight that
+    does not exist.
+    """
     symbol = symbol.upper()
     if symbol in EXCLUDED:
         raise GeneNotSupported(f"{symbol} is not audited here: {EXCLUDED[symbol]}")
@@ -344,13 +353,58 @@ def load_gene(symbol: str, refresh: bool = False) -> Gene:
     for row in allele_rows:
         populations.update((row.get("frequency") or {}).keys())
 
+    if frequencies not in ("cpic", "gnomad"):
+        raise ValueError(f"unknown frequency source {frequencies!r}")
+    gnomad_freq: dict[str, dict[str, float]] = {}
+    gnomad_prov: dict = {}
+    if frequencies == "gnomad":
+        from . import gnomad as _gnomad  # noqa: PLC0415 — optional network path
+
+        gnomad_freq, gnomad_prov = _gnomad.frequencies(symbol, refresh=refresh)
+        # The reported population list must follow the weights actually in
+        # use, or reference_frequency() derives a denominator for a
+        # population that now has none.
+        populations = set(_gnomad.POPULATIONS) & {
+            p for per in gnomad_freq.values() for p in per
+        }
+
+    # Positions that only ever appear as part of a larger haplotype. CPIC
+    # publishes no frequency for those components, so they were weightless
+    # and the question never arose; gnomAD has a frequency for every
+    # position, which would give a haplotype's tag an independent weight
+    # and count its carriers twice. DPYD's c.1236G>A is exactly this: the
+    # HapB3 tag, decreased-function, whose carriers are already HapB3.
+    component_rsids: set[str] = set()
+    if frequencies == "gnomad":
+        defined = [
+            frozenset(r.strip() for r in row["rsid"].split(";") if r.strip())
+            for row in _allele_rows(symbol)
+        ]
+        for small in defined:
+            if any(small < big for big in defined):
+                component_rsids |= small
+
+    def _freq(row: dict | None, rsids: frozenset[str]) -> dict[str, float]:
+        if frequencies == "cpic":
+            return dict((row or {}).get("frequency") or {})
+        # gnomAD is keyed by position, so an allele defined by several
+        # positions has no single frequency here. Reporting one of them
+        # would silently answer a haplotype question with a SNP's number.
+        if len(rsids) != 1:
+            return {}
+        if rsids & component_rsids:
+            return {}
+        return dict(gnomad_freq.get(next(iter(rsids)), {}))
+
     reference_name = reference_row["name"]
     alleles: dict[str, Allele] = {
         reference_name: Allele(
             name=reference_name,
             rsids=frozenset(),
             function=reference_row["clinicalfunctionalstatus"].strip(),
-            frequencies=dict(reference_row.get("frequency") or {}),
+            # The reference allele is defined by the absence of variants, so
+            # gnomAD has no row for it either way; it is derived downstream.
+            frequencies=dict(reference_row.get("frequency") or {}) if frequencies == "cpic" else {},
         )
     }
 
@@ -362,7 +416,7 @@ def load_gene(symbol: str, refresh: bool = False) -> Gene:
             # One allele may be defined by several positions; HapB3 is two.
             rsids=frozenset(r.strip() for r in row["rsid"].split(";") if r.strip()),
             function=row["function"].strip(),
-            frequencies=dict((cpic_row or {}).get("frequency") or {}),
+            frequencies=_freq(cpic_row, frozenset(r.strip() for r in row["rsid"].split(";") if r.strip())),
         )
 
     # Every allele function must exist in CPIC's own diplotype vocabulary
@@ -390,7 +444,12 @@ def load_gene(symbol: str, refresh: bool = False) -> Gene:
         reference=reference_name,
         phenotype_by_functions=phenotypes,
         populations=tuple(sorted(populations)),
-        provenance={"allele": allele_prov, "diplotype": diplo_prov},
+        provenance={
+            "allele": allele_prov,
+            "diplotype": diplo_prov,
+            "frequencies": gnomad_prov or {"source": allele_prov.get("source", "CPIC")},
+            "frequency_source": frequencies,
+        },
     )
 
     # Fail at load, not halfway through a customer's report.

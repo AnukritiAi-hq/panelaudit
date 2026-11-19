@@ -114,6 +114,30 @@ def run() -> int:
     assert full_preset == every_locus, every_locus ^ full_preset
     assert all(c.verdict == CORRECT for c in audit(dpyd, full_preset, SAS))
 
+    # --- the second frequency source -------------------------------------
+    # gnomAD weighting exists to show where the choice of reference, rather
+    # than the assay, is driving a rate. Three properties have to hold or it
+    # would quietly invent weight that CPIC never gave.
+    gn = load_gene("DPYD", frequencies="gnomad")
+
+    # 1. A population gnomAD cannot answer is dropped, not approximated.
+    #    gnomAD's afr pools African American with continental African, so
+    #    CPIC's Sub-Saharan African has no counterpart.
+    assert "Sub-Saharan African" in dpyd.populations
+    assert "Sub-Saharan African" not in gn.populations, gn.populations
+
+    # 2. A haplotype has no single position, so it gets no gnomAD weight.
+    assert not gn.alleles["HapB3"].frequencies
+
+    # 3. The components of a haplotype get none either. c.1236G>A is the
+    #    HapB3 tag and carries a real position-level frequency in gnomAD;
+    #    weighting it independently counts HapB3 carriers twice and treats a
+    #    tag as causal. Before this rule the European rate read 4,292 per
+    #    100,000 against CPIC's 16 — almost all of it this one allele.
+    for component in ("c.1236G>A", "c.1129-5923C>G"):
+        assert not gn.alleles[component].frequencies, component
+    assert gn.alleles["*2A"].frequencies["European"] > 0
+
     # --- frequency -------------------------------------------------------
     # Hardy-Weinberg: p^2 for a homozygote, 2pq for a heterozygote.
     p = dpyd.alleles["c.2279C>T"].frequencies[SAS]
