@@ -39,22 +39,57 @@ from dataclasses import dataclass, field
 from .lattice import project, signature_index
 from .model import Gene
 
-#: CPIC clinical-function values that a guideline acts on, lowercased
-#: prefix match. "Possible decreased function" and "possible no function"
-#: are included: CPIC assigns them an activity value and its diplotype
-#: tables give them a phenotype, so a panel that misses one misses an
-#: actionable result.
-ACTIONABLE_PREFIXES = ("decreased function", "no function", "possible")
+#: CPIC clinical-function values counted as burden. Matched on the whole
+#: lowercased string, not a prefix: a bare "possible" prefix was in the
+#: first version of this file, matched nothing in any of the seven genes,
+#: and would have swept in "possible normal function" had CPIC ever added
+#: it. The possible-* forms below are spelled out instead.
+ACTIONABLE = frozenset({
+    "decreased function",
+    "no function",
+    "possible decreased function",
+    "possible no function",
+})
 
-#: Excluded, and named so the exclusion is visible rather than implied.
-NOT_ACTIONABLE_PREFIXES = ("normal function", "unknown", "uncertain", "n/a")
+#: Counted as NOT burden, and listed rather than implied.
+#:
+#: "increased function" is the entry worth arguing about. CPIC does act on
+#: it — a CYP2C19 ultrarapid metabolizer gets its own recommendation — so
+#: it is not inert. It is excluded because this figure measures the burden
+#: a panel can fail to warn about, and an increased-function allele missed
+#: is a different failure with a different consequence. DPYD, which the
+#: published figures are about, has no increased-function allele at all,
+#: so nothing here turns on it. Counting the two together would hide which
+#: kind of miss a number described.
+NOT_ACTIONABLE = frozenset({
+    "normal function",
+    "increased function",
+    "uncertain function",
+    "unknown",
+    "unknown function",
+    "n/a",
+    "",
+})
+
+
+def classify(function: str) -> str:
+    """``actionable`` | ``not actionable`` | ``unrecognised``.
+
+    Total by construction. CPIC's vocabulary is not frozen, and a term
+    this module has never seen must surface as unrecognised rather than
+    fall to whichever branch an if-statement happened to end on. Every
+    report carries the unrecognised terms it met.
+    """
+    value = (function or "").strip().lower()
+    if value in ACTIONABLE:
+        return "actionable"
+    if value in NOT_ACTIONABLE:
+        return "not actionable"
+    return "unrecognised"
 
 
 def is_actionable(function: str) -> bool:
-    value = (function or "").strip().lower()
-    if value.startswith(NOT_ACTIONABLE_PREFIXES):
-        return False
-    return value.startswith(ACTIONABLE_PREFIXES)
+    return classify(function) == "actionable"
 
 
 @dataclass(frozen=True)
@@ -72,6 +107,10 @@ class Burden:
     #: Actionable alleles CPIC gives no frequency for in this population.
     #: Excluded from both figures, never counted as zero.
     unpriced: tuple[str, ...] = field(default_factory=tuple)
+    #: CPIC function terms this module does not recognise, with the allele
+    #: carrying each. Excluded from both figures and reported, because a
+    #: vocabulary that grew is a thing to fix, not to round away.
+    unrecognised: tuple[tuple[str, str], ...] = field(default_factory=tuple)
 
     @property
     def fraction(self) -> float | None:
@@ -116,9 +155,16 @@ def actionable_burden(gene: Gene, panel: frozenset[str], population: str) -> Bur
     covered = total = 0.0
     missed: list[tuple[str, float]] = []
     unpriced: list[str] = []
+    unrecognised: list[tuple[str, str]] = []
 
     for name, allele in gene.alleles.items():
-        if name == gene.reference or not is_actionable(allele.function):
+        if name == gene.reference:
+            continue
+        verdict = classify(allele.function)
+        if verdict == "unrecognised":
+            unrecognised.append((name, allele.function))
+            continue
+        if verdict != "actionable":
             continue
         value = allele.frequencies.get(population)
         if value is None:
@@ -143,6 +189,7 @@ def actionable_burden(gene: Gene, panel: frozenset[str], population: str) -> Bur
         total=total,
         missed=tuple(missed),
         unpriced=tuple(sorted(unpriced)),
+        unrecognised=tuple(sorted(unrecognised)),
     )
 
 

@@ -170,11 +170,24 @@ there and at **0.0** in Europeans, which is why a panel assembled from
 European data omits it. Both figures are pinned in `--self-check`, because
 they have been quoted outside this repository.
 
+The starker case is African. For Sub-Saharan Africans the same panel
+reaches **0.0%** of the actionable frequency CPIC publishes, because
+`c.557A>G` alone is 2.59% of a 2.79% burden and `cpic4` does not carry it —
+even though the FDA capecitabine label names that variant. The gaps section
+ranks populations by frequency unseen rather than by percentage, so this
+case leads rather than a population with a small burden the panel also
+misses.
+
 An allele counts toward the burden when CPIC's clinical function is
-decreased, none, or a possible-\* form of either; normal, unknown and
-uncertain are excluded, and `burden.py` says why. Alleles CPIC publishes no
-frequency for are listed by name and excluded from both halves of the
-fraction rather than counted as zero.
+decreased, none, or a possible-\* form of either. Normal, **increased** and
+uncertain are excluded, and `burden.py` argues the increased-function case
+rather than assuming it: CPIC does act on increased function, but a panel
+missing one is a different failure with a different consequence, and DPYD
+has no such allele. Classification is total — a CPIC term this build does
+not recognise is reported, not rounded into whichever branch an
+if-statement ended on. Alleles CPIC publishes no frequency for are listed
+by name and excluded from both halves of the fraction rather than counted
+as zero.
 
 ## Citation
 

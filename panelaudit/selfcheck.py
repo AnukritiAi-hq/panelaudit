@@ -10,7 +10,7 @@ from __future__ import annotations
 import tempfile
 import pathlib
 
-from .burden import actionable_burden, is_actionable
+from .burden import actionable_burden, classify, is_actionable
 from .lattice import (
     CORRECT, NO_CALL, UNDERCALL, WRONG,
     audit, diplotype_frequency, project, rank_additions, signature_index, summarise,
@@ -231,6 +231,22 @@ def run() -> int:
     # Normal-function alleles are not burden; unknown ones are not either.
     assert is_actionable("No function") and is_actionable("Decreased function")
     assert not is_actionable("Normal function") and not is_actionable("Unknown")
+    # CPIC writes the same term with different capitals across genes.
+    assert is_actionable("Decreased Function") and is_actionable("No Function")
+    # Increased function is excluded on purpose, not by falling through.
+    assert classify("Increased function") == "not actionable"
+    # Classification is total: a term from a future CPIC release surfaces
+    # rather than landing on whichever branch an if-statement ended on.
+    assert classify("Possible no function") == "actionable"
+    assert classify("some term CPIC has not published") == "unrecognised"
+
+    # Every gene this package supports classifies cleanly against the
+    # tables actually bundled. A new term in any of them fails here.
+    for symbol in SUPPORTED:
+        g = load_gene(symbol)
+        bad = {a.function for a in g.alleles.values()
+               if classify(a.function) == "unrecognised"}
+        assert not bad, (symbol, bad)
 
     # An allele CPIC gives no frequency for is excluded from both halves,
     # never silently counted as zero.
@@ -240,6 +256,21 @@ def run() -> int:
 
     # A panel that types nothing reaches none of the burden.
     assert actionable_burden(dpyd, frozenset(), SAS).covered == 0.0
+
+    # The renderer, not just the numbers. A previous build passed every
+    # assertion above while `--burden` crashed on an import the refactor
+    # had removed: the check exercised the calculation and never the
+    # command, which is the only thing a user runs.
+    from .report import burden_table  # noqa: PLC0415
+
+    rendered = burden_table(dpyd, "cpic4", cpic4)
+    assert "98.7%" in rendered and "78.1%" in rendered, rendered
+    # The gaps section must rank by unmet burden. Sub-Saharan African is
+    # the largest for this panel: c.557A>G alone is 2.59% of a 2.79%
+    # burden, and cpic4 does not carry it.
+    assert "Sub-Saharan African" in rendered, rendered
+    assert "c.557A>G" in rendered, rendered
+    assert burden_table(tpmt, "tiny", frozenset()), "renderer must survive an empty panel"
 
     print(f"self-check OK — {len(SUPPORTED)} genes, {len(EXCLUDED)} refused, "
           "scales, projection, lattice, frequency, optimiser, intake, burden")

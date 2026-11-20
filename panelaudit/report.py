@@ -238,7 +238,7 @@ def burden_table(gene, panel_name: str, panel: frozenset[str]) -> str:
     fact about the panel, and the spread across populations is what shows
     which population the panel was built from.
     """
-    from .burden import ACTIONABLE_PREFIXES, across_populations
+    from .burden import across_populations
 
     rows = across_populations(gene, panel)
     out = [
@@ -258,14 +258,37 @@ def burden_table(gene, panel_name: str, panel: frozenset[str]) -> str:
             f"({b.covered * 100:.3f}% of {b.total * 100:.3f}% allele frequency)"
         )
 
-    worst = min(
+    unrecognised = sorted({
+        f"{fn!r} ({name})"
+        for b in rows.values() for name, fn in b.unrecognised
+    })
+    if unrecognised:
+        out.append("")
+        out.append(
+            "  CPIC function term(s) this build does not classify, excluded "
+            "from both figures:"
+        )
+        for row in unrecognised:
+            out.append(f"      {row}")
+
+    # Ranked by how much actionable frequency goes unseen, not by the
+    # percentage. Picking the lowest percentage put East Asian at the top
+    # of this list — 0% of a 0.226% burden — and hid Sub-Saharan African,
+    # where a single allele this panel does not carry is 2.59% of a 2.79%
+    # burden. The percentage says how well a panel does; the absolute says
+    # how much is at stake.
+    worst = max(
         (b for b in rows.values() if b.percent is not None and b.missed),
-        key=lambda b: b.percent,
+        key=lambda b: b.total - b.covered,
         default=None,
     )
     if worst is not None:
+        unmet = (worst.total - worst.covered) * 100
         out.append("")
-        out.append(f"  Largest gaps in {worst.population}:")
+        out.append(
+            f"  Largest unmet burden — {worst.population}, "
+            f"{unmet:.3f}% of allele frequency unseen:"
+        )
         for name, value in worst.missed[:5]:
             out.append(f"      {value * 100:6.3f}%  {name}")
         if worst.unpriced:
