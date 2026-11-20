@@ -229,3 +229,54 @@ def frequency_comparison(gene_symbol: str, refresh: bool = False) -> str:
     add("")
     add(f"  {gnomad_gene.provenance['frequencies']['source']}")
     return "\n".join(out)
+
+
+def burden_table(gene, panel_name: str, panel: frozenset[str]) -> str:
+    """Actionable-burden coverage for one panel, across every population.
+
+    Printed as a table because a single population's figure reads as a
+    fact about the panel, and the spread across populations is what shows
+    which population the panel was built from.
+    """
+    from .burden import ACTIONABLE_PREFIXES, across_populations
+
+    rows = across_populations(gene, panel)
+    out = [
+        f"Actionable burden reached by {panel_name} ({len(panel)} loci)",
+        "",
+        "  CPIC allele frequency carrying a decreased-function, no-function or",
+        "  possible-* call, and the share of it this panel's positions detect.",
+        "",
+    ]
+    width = max(len(p) for p in rows) if rows else 10
+    for population, b in sorted(rows.items()):
+        if b.percent is None:
+            out.append(f"  {population:<{width}}   no published frequencies")
+            continue
+        out.append(
+            f"  {population:<{width}}   {b.percent:5.1f}%   "
+            f"({b.covered * 100:.3f}% of {b.total * 100:.3f}% allele frequency)"
+        )
+
+    worst = min(
+        (b for b in rows.values() if b.percent is not None and b.missed),
+        key=lambda b: b.percent,
+        default=None,
+    )
+    if worst is not None:
+        out.append("")
+        out.append(f"  Largest gaps in {worst.population}:")
+        for name, value in worst.missed[:5]:
+            out.append(f"      {value * 100:6.3f}%  {name}")
+        if worst.unpriced:
+            out.append("")
+            out.append(
+                f"  {len(worst.unpriced)} actionable allele(s) have no published "
+                f"frequency in that population and are excluded from both figures, "
+                f"never counted as zero:"
+            )
+            out.append("      " + ", ".join(worst.unpriced[:8])
+                       + (" ..." if len(worst.unpriced) > 8 else ""))
+    out.append("")
+    out.append("  " + DISCLAIMER)
+    return "\n".join(out)

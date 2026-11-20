@@ -77,6 +77,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--no-suggest", action="store_true", help="skip the addition ranking")
     ap.add_argument("--frequencies", choices=("cpic", "gnomad"), default="cpic",
                     help="which allele frequencies weight the rates (default: cpic)")
+    ap.add_argument("--burden", action="store_true",
+                    help="share of actionable allele frequency this panel "
+                         "reaches, per population, and exit")
     ap.add_argument("--compare-frequencies", action="store_true",
                     help="show where CPIC and gnomAD disagree for this gene, and exit")
     ap.add_argument("--refresh", action="store_true", help="re-fetch CPIC tables")
@@ -103,6 +106,14 @@ def main(argv: list[str] | None = None) -> int:
         from .report import frequency_comparison  # noqa: PLC0415
 
         print(frequency_comparison(args.gene, refresh=args.refresh))
+        return 0
+
+    if args.burden:
+        from .panels import resolve  # noqa: PLC0415
+
+        gene = load_gene(args.gene, refresh=args.refresh, frequencies=args.frequencies)
+        panel_name, panel, _ = resolve(args.panel)
+        print(_report.burden_table(gene, panel_name, panel))
         return 0
 
     if args.all_panels:

@@ -114,6 +114,7 @@ prediction for an individual.
 | `cpic.py` | fetch and cache CPIC tables; the only network code |
 | `model.py` | gene definitions, phenotype mapping, frequencies |
 | `lattice.py` | classification, weighting, the addition optimiser |
+| `burden.py` | share of a population's actionable allele frequency a panel reaches |
 | `panels.py` | customer panel files and named presets |
 | `report.py` | JSON and text rendering, provenance-stamped |
 | `cli.py` | entry point |
@@ -149,7 +150,31 @@ used here and is not needed to reproduce any published result.
 python -m panelaudit --self-check          # every invariant
 python -m analysis.equity_table            # cost-of-transfer tables
 python -m panelaudit --gene DPYD --all-panels
+python -m panelaudit --burden --panel cpic4   # coverage by population
 ```
+
+### Actionable-burden coverage
+
+`--burden` answers the question an external quality scheme asks: of all the
+allele frequency CPIC says to act on, what share sits at a position this
+panel actually types? It is a property of the panel and the population, and
+unlike the wrong-phenotype rate it needs no diplotype model.
+
+```
+  Central/South Asian                78.1%   (2.538% of 3.250% allele frequency)
+  European                           98.7%   (3.595% of 3.641% allele frequency)
+```
+
+The whole South Asian gap is one allele. CPIC prices `c.2279C>T` at 0.603%
+there and at **0.0** in Europeans, which is why a panel assembled from
+European data omits it. Both figures are pinned in `--self-check`, because
+they have been quoted outside this repository.
+
+An allele counts toward the burden when CPIC's clinical function is
+decreased, none, or a possible-\* form of either; normal, unknown and
+uncertain are excluded, and `burden.py` says why. Alleles CPIC publishes no
+frequency for are listed by name and excluded from both halves of the
+fraction rather than counted as zero.
 
 ## Citation
 

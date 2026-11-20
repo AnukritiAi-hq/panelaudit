@@ -10,6 +10,7 @@ from __future__ import annotations
 import tempfile
 import pathlib
 
+from .burden import actionable_burden, is_actionable
 from .lattice import (
     CORRECT, NO_CALL, UNDERCALL, WRONG,
     audit, diplotype_frequency, project, rank_additions, signature_index, summarise,
@@ -207,6 +208,39 @@ def run() -> int:
         # DPYD they can genuinely produce an indeterminate result.
         assert any(c.verdict == NO_CALL or c.direction for c in audit(gene, loci))
 
+    # --- actionable-burden coverage ---------------------------------------
+    # These two figures have been quoted in correspondence with an external
+    # quality-assurance scheme. They are pinned here so the package cannot
+    # drift away from a number published under somebody's name without the
+    # check going red.
+    cpic4 = frozenset(presets()["cpic4"][1])
+    eur = actionable_burden(dpyd, cpic4, "European")
+    sas = actionable_burden(dpyd, cpic4, SAS)
+    assert round(eur.percent, 1) == 98.7, eur.percent
+    assert round(sas.percent, 1) == 78.1, sas.percent
+
+    # The gap is one allele, and naming it is the point of the figure.
+    assert sas.missed[0][0] == "c.2279C>T", sas.missed[:3]
+    # CPIC prices it at zero in Europeans, which is why the panel omits it.
+    assert dpyd.alleles["c.2279C>T"].frequencies["European"] == 0.0
+
+    # HapB3 must count as reached through the tag alone, or this figure
+    # would contradict the wrong-phenotype report about the same panel.
+    assert "HapB3" not in {name for name, _ in eur.missed}, eur.missed
+
+    # Normal-function alleles are not burden; unknown ones are not either.
+    assert is_actionable("No function") and is_actionable("Decreased function")
+    assert not is_actionable("Normal function") and not is_actionable("Unknown")
+
+    # An allele CPIC gives no frequency for is excluded from both halves,
+    # never silently counted as zero.
+    assert sas.unpriced and all(
+        dpyd.alleles[n].frequencies.get(SAS) is None for n in sas.unpriced
+    )
+
+    # A panel that types nothing reaches none of the burden.
+    assert actionable_burden(dpyd, frozenset(), SAS).covered == 0.0
+
     print(f"self-check OK — {len(SUPPORTED)} genes, {len(EXCLUDED)} refused, "
-          "scales, projection, lattice, frequency, optimiser, intake")
+          "scales, projection, lattice, frequency, optimiser, intake, burden")
     return 0
